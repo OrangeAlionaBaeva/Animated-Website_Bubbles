@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh; /*100% высоты окна браузера*/
+    background-image: url(./images/background.png);
+    background-size: cover; /* Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока. */
+    background-position: center; /*Задает начальное положение фонового изображения, установленного с помощью свойства background-image. center-положение по горизонтали */
+    position: relative; /* Положение div устанавливается относительно его исходного места*/
+    overflow: hidden; /* overflow управляет отображением содержания блочного элемента. hidden - Отображается только область внутри элемента, остальное будет скрыто. */
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+}
+
+.navbar {
+    width: 85%;
+    height: 15%;
+    margin: auto; /* Указывает, что размер отступов будет автоматически рассчитан браузером.*/
+    display: flex;
+    align-items: center; /* задает выравнивание элементов вдоль поперечной оси. Применяется к родительскому элементу для flex блоков*/
+    justify-content: space-between;
+}
+
+button {
+    color: #fbfcfd;
+    padding: 10px 25px;
+    background: transparent; /*означает, что вы можете видеть фон элемента, то есть его цвет фона будет выглядеть идентичным цвету фона, видимому на его родительском элементе */
+    border: 1px solid #fff;
+    border-radius: 20px;
+    outline: none; /*свойство одновременно устанавливающее цвет, стиль и толщину внешней границы на всех четырех сторонах элемента. 
+    В отличие от линии, задаваемой через border, свойство outline не влияет на положение блока и его ширину. 
+    Также нельзя задать параметры линии на отдельных сторонах элемента, outline применяется сразу ко всем четырём сторонам. */
+    cursor: pointer;   
+}
+
+.content {
+    color: #fbfcfd;
+    position: absolute; /*Элемент исчезает с того места, где он должен быть и позиционируется заново. 
+    Остальные элементы, располагаются так, как будто этого элемента никогда не было */
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%); /* transform - преобразовывают элемент, не затрагивая остальные элементы веб-страницы, 
+    т.е. другие элементы не сдвигаются относительно него.
+    translateY - Сдвигает элемент относительно его обычного положения по оси Y.*/
+    z-index: 2;  /*Любые позиционированные элементы на веб-странице могут накладываться друг на друга в определенном порядке, 
+    имитируя тем самым третье измерение, перпендикулярное экрану. Каждый элемент может находиться как ниже, 
+    так и выше других объектов веб-страницы, их размещением по z-оси и управляет z-index. 
+    Это свойство работает только для элементов, у которых значение position задано как absolute, fixed или relative.
+    Чем больше значение, тем выше находится элемент по сравнению с теми элементами, у которых оно меньше. */
+}
+
+h1 {
+    font-size: 80px;
+    margin: 10px 0 30px;
+    line-height: 80px; /* Устанавливает межстрочный интервал текста, отсчет ведется от базовой линии шрифта. */
+}
+
+.side-bar {
+    width: 50px;
+    height: 100vh;
+    background: linear-gradient(#00545d, #000729);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.menu {
+    display: block;
+    width: 25px;
+    margin: 40px auto 0;
+    cursor: pointer;
+}
+
+.social-links img, .useful-links img {
+width: 25px;
+margin: 5px auto;
+cursor: pointer;
+}
+
+.social-links {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.useful-links {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.bubbles img {
+    width: 50px;
+    animation: bubble 7s linear infinite;
+}
+
+.bubbles {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -70px;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0; /* Определяет уровень прозрачности элемента веб-страницы. 
+        В качестве значения выступает число из диапазона [0.0; 1.0]. Значение 0 соответствует полной прозрачности элемента, а 1, наоборот — его непрозрачности.*/
+    }
+
+    50% {
+        opacity: 1; 
+    }
+
+    70% {
+        opacity: 1; 
+    }
+
+    100% {
+        transform: translateY(-80vh);
+        opacity: 0; 
+    }
+}
+
+.bubbles img:nth-child(1) {
+    animation-delay: 2s;
+    width: 25px;
+}
+.bubbles img:nth-child(2) {
+    animation-delay: 1s;
+}
+.bubbles img:nth-child(3) {
+    animation-delay: 3s;
+    width: 15px;
+}
+.bubbles img:nth-child(4) {
+    animation-delay: 4.5s;
+}
+.bubbles img:nth-child(5) {
+    animation-delay: 3s;
+    width: 20px;
+}
+.bubbles img:nth-child(6) {
+    animation-delay: 6s;
+}
+.bubbles img:nth-child(7) {
+    animation-delay: 7s;
+    width: 30px;
+}
+
+
+
+
+
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
